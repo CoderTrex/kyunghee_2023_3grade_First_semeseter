@@ -1,0 +1,13 @@
+﻿  KhuGleBase.cpp
+  KhuGleComponent.cpp
+  KhuGleLayer.cpp
+  KhuGleScene.cpp
+  KhuGleSprite.cpp
+  KhuGleWin.cpp
+C:\Coding\kyunghee-2023_3grade_First_semeseter-\AI_and_Game_Programming\KhuGle-main\KhuGle-main\04. KhuGle(3D Rendering)\KhuGle\KhuGleWin.cpp(352,80): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter-\AI_and_Game_Programming\KhuGle-main\KhuGle-main\04. KhuGle(3D Rendering)\KhuGle\KhuGleWin.cpp(370,66): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter-\AI_and_Game_Programming\KhuGle-main\KhuGle-main\04. KhuGle(3D Rendering)\KhuGle\KhuGleWin.cpp(414,52): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter-\AI_and_Game_Programming\KhuGle-main\KhuGle-main\04. KhuGle(3D Rendering)\KhuGle\KhuGleWin.cpp(526,12): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Main.cpp
+  코드를 생성하고 있습니다...
+  KhuGle.vcxproj -> C:\Coding\kyunghee-2023_3grade_First_semeseter-\AI_and_Game_Programming\KhuGle-main\KhuGle-main\04. KhuGle(3D Rendering)\x64\Debug\KhuGle.exe
