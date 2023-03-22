@@ -104,7 +104,6 @@ void CCollision::Update()
 		for(auto &Sprite : Layer->m_Children)
 		{
 			CKhuGleSprite *Ball = (CKhuGleSprite *)Sprite;
-
 			Ball->m_bCollided = false;
 
 			if(Ball->m_nType == GP_STYPE_RECT) continue;
@@ -134,8 +133,7 @@ void CCollision::Update()
 		for(auto &SpriteA : Layer->m_Children)
 		{
 			CKhuGleSprite *Ball = (CKhuGleSprite *)SpriteA;
-			if(Ball->m_nType != GP_STYPE_ELLIPSE) continue;
-
+			//if(Ball->m_nType != GP_STYPE_ELLIPSE) continue;
 			for(auto &SpriteB : Layer->m_Children)
 			{
 				CKhuGleSprite *Target = (CKhuGleSprite *)SpriteB;
@@ -144,8 +142,18 @@ void CCollision::Update()
 
 				if(((CKhuGleSprite *)Target)->m_nType == GP_STYPE_ELLIPSE) 
 				{
-					CKgVector2D PosVec = Ball->m_Center - Target->m_Center;
-					double Overlapped = CKgVector2D::abs(PosVec) - Ball->m_Radius - Target->m_Radius;
+					CKgVector2D PosVec;
+					double Overlapped;
+					if (((CKhuGleSprite*)Target)->m_nType == GP_CTYPE_DYNAMIC)
+					{
+						PosVec = Ball->m_Center - Target->m_Center;
+						Overlapped = CKgVector2D::abs(PosVec) - Ball->m_Radius - Target->m_Radius;
+					}
+					else
+					{
+						PosVec = Ball->m_Center - Target->m_Center;
+						Overlapped = CKgVector2D::abs(PosVec) - Ball->m_Radius - Target->m_Radius;
+					}
 					if(Overlapped <= 0)
 					{
 						CollisionPairs.push_back({Ball, Target});
@@ -162,14 +170,14 @@ void CCollision::Update()
 							if(Ball->m_nCollisionType != GP_CTYPE_STATIC)
 							{
 								if(Target->m_nCollisionType == GP_CTYPE_STATIC)
-									Ball->MoveBy(-PosVec.x*Overlapped/CKgVector2D::abs(PosVec), -PosVec.y*Overlapped/CKgVector2D::abs(PosVec));
+									Ball->MoveBy(-PosVec.x*Overlapped/CKgVector2D::abs(PosVec)*0.5, -PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
 								else
 									Ball->MoveBy(-PosVec.x*Overlapped/CKgVector2D::abs(PosVec)*0.5, -PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
 							}
 							if(Target->m_nCollisionType != GP_CTYPE_STATIC)
 							{
 								if(Ball->m_nCollisionType == GP_CTYPE_STATIC)
-									Target->MoveBy(PosVec.x*Overlapped/CKgVector2D::abs(PosVec), PosVec.y*Overlapped/CKgVector2D::abs(PosVec));
+									Target->MoveBy(PosVec.x*Overlapped/CKgVector2D::abs(PosVec)*0.5, PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
 								else
 									Target->MoveBy(PosVec.x*Overlapped/CKgVector2D::abs(PosVec)*0.5, PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
 							}
