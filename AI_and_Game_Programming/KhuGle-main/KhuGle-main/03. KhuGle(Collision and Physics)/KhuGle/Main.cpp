@@ -187,6 +187,28 @@ void CCollision::Update()
 						Target->m_bCollided = true;
 					}
 				}
+				if (Target->m_nType == GP_STYPE_LINE)
+				{
+					CKgVector2D LinePos = CKgVector2D(Target->m_lnLine.End.X, Target->m_lnLine.End.Y)
+						- CKgVector2D(Target->m_lnLine.Start.X, Target->m_lnLine.Start.Y);
+					CKgVector2D LineCirclePos = Ball->m_Center
+						- CKgVector2D(Target->m_lnLine.Start.X, Target->m_lnLine.Start.Y);
+					
+
+					double AA = LinePos.Dot(LinePos);
+					//CKgVector2D ProjectionPoint = max(0., min(AA, LinePos.Dot(LineCirclePos))) / AA;
+					CKgVector2D ProjectionPoint = LineCirclePos.Dot(LinePos) / AA * LinePos;
+					CKgVector2D Normal = Ball->m_Center - ProjectionPoint;
+					double overlapped = CKgVector2D::abs(Normal) - Ball->m_Radius - Target->m_nWidth / 2;
+					if (overlapped <= 0)
+					{
+						CKhuGleSprite* virtualBall = new CKhuGleSprite(GP_STYPE_ELLIPSE, GP_CTYPE_STATIC,
+							CKgLine((int)(ProjectionPoint.x - Target->m_nWidth/2.)), (int)(ProjectionPoint.y - Target->m_nWidth/2.)), 
+							(int)(ProjectionPoint.x + Target->m_nWidth/2.), (int)(ProjectionPoint.y + Target->m_nWidth/2.),
+							KG_COLOR_24_RGB(255,0,0), false, 100);
+							
+					}
+				}
 			}
 		}
 
