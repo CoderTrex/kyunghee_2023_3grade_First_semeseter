@@ -1,2 +1,7 @@
 ﻿  Main.cpp
-  KhuGle.vcxproj -> C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\x64\Debug\KhuGle.exe
+C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\KhuGle\Main.cpp(206,62): error C2440: '<function-style-cast>': 'int'에서 'CKgLine'(으)로 변환할 수 없습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\KhuGle\Main.cpp(206,62): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\KhuGle\Main.cpp(205,53): error C2661: 'CKhuGleSprite::CKhuGleSprite': 오버로드된 함수에서 3개의 인수를 사용하지 않습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\KhuGle\Main.cpp(207,9): error C2062: 예기치 않은 'int' 형식입니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\KhuGle\Main.cpp(208,44): error C2059: 구문 오류: ')'
+C:\Coding\kyunghee-2023_3grade_First_semeseter\AI_and_Game_Programming\KhuGle-main\KhuGle-main\03. KhuGle(Collision and Physics)\KhuGle\Main.cpp(211,7): error C2065: 'virtualBalls': 선언되지 않은 식별자입니다.
