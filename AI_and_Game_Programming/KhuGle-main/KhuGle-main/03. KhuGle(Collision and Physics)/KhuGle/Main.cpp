@@ -134,13 +134,13 @@ void CCollision::Update()
 		{
 			CKhuGleSprite *Ball = (CKhuGleSprite *)SpriteA;
 			//if(Ball->m_nType != GP_STYPE_ELLIPSE) continue;
-			for(auto &SpriteB : Layer->m_Children)
+			for (auto& SpriteB : Layer->m_Children)
 			{
-				CKhuGleSprite *Target = (CKhuGleSprite *)SpriteB;
+				CKhuGleSprite* Target = (CKhuGleSprite*)SpriteB;
 
-				if(Ball == Target) continue;
+				if (Ball == Target) continue;
 
-				if(((CKhuGleSprite *)Target)->m_nType == GP_STYPE_ELLIPSE) 
+				if (((CKhuGleSprite*)Target)->m_nType == GP_STYPE_ELLIPSE)
 				{
 					CKgVector2D PosVec;
 					double Overlapped;
@@ -154,75 +154,73 @@ void CCollision::Update()
 						PosVec = Ball->m_Center - Target->m_Center;
 						Overlapped = CKgVector2D::abs(PosVec) - Ball->m_Radius - Target->m_Radius;
 					}
-					if(Overlapped <= 0)
+					if (Overlapped <= 0)
 					{
-						CollisionPairs.push_back({Ball, Target});
+						CollisionPairs.push_back({ Ball, Target });
 
-						if(CKgVector2D::abs(PosVec) == 0)
-						{
-							if(Ball->m_nCollisionType != GP_CTYPE_STATIC)
-								Ball->MoveBy(rand()%3-1, rand()%3-1);
-							if(Target->m_nCollisionType != GP_CTYPE_STATIC)
-								Target->MoveBy(rand()%3-1, rand()%3-1);
-						}
-						else
-						{
-							if(Ball->m_nCollisionType != GP_CTYPE_STATIC)
-							{
-								if(Target->m_nCollisionType == GP_CTYPE_STATIC)
-									Ball->MoveBy(-PosVec.x*Overlapped/CKgVector2D::abs(PosVec), -PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
-								else
-									Ball->MoveBy(-PosVec.x*Overlapped/CKgVector2D::abs(PosVec)*0.5, -PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
-							}
-							if(Target->m_nCollisionType != GP_CTYPE_STATIC)
-							{
-								if(Ball->m_nCollisionType == GP_CTYPE_STATIC)
-									Target->MoveBy(PosVec.x*Overlapped/CKgVector2D::abs(PosVec), PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
-								else
-									Target->MoveBy(PosVec.x*Overlapped/CKgVector2D::abs(PosVec)*0.5, PosVec.y*Overlapped/CKgVector2D::abs(PosVec)*0.5);
-							}
-						}
-						Ball->m_bCollided = true;
-						Target->m_bCollided = true;
-					}
-				}
-				if (Target->m_nType == GP_STYPE_LINE)
-				{
-					CKgVector2D LinePos = CKgVector2D(Target->m_lnLine.End.X, Target->m_lnLine.End.Y)
-						- CKgVector2D(Target->m_lnLine.Start.X, Target->m_lnLine.Start.Y);
-					CKgVector2D LineCirclePos = Ball->m_Center - CKgVector2D(Target->m_lnLine.Start.X, Target->m_lnLine.Start.Y);
-					
-
-					double AA = LinePos.Dot(LinePos);
-					//CKgVector2D ProjectionPoint = max(0., min(AA, LinePos.Dot(LineCirclePos))) / AA;
-					CKgVector2D ProjectionPoint = LineCirclePos.Dot(LinePos) / AA * LinePos;
-
-					CKgVector2D Normal = Ball->m_Center - ProjectionPoint;
-
-					double overlapped = CKgVector2D::abs(Normal) - Ball->m_Radius - Target->m_nWidth / 2;
-					if (overlapped <= 0)
-					{
-						CKhuGleSprite *virtualBall = new CKhuGleSprite(GP_STYPE_ELLIPSE, GP_CTYPE_STATIC,
-							CKgLine((int)(ProjectionPoint.x - Target->m_nWidth/2.)), (int)(ProjectionPoint.y - Target->m_nWidth/2.)), 
-							(int)(ProjectionPoint.x + Target->m_nWidth/2.), (int)(ProjectionPoint.y + Target->m_nWidth/2.),
-							KG_COLOR_24_RGB(255,0,0), false, 100);
-						
-						virtualBall->m_Mass = 1E50;
-						virtualBalls.push_back(virtualBall);
-
-						CollisionPairs.push_back({ Ball, virtualBall });
-						if (CKgVector2D::abs(Normal) == 0)
+						if (CKgVector2D::abs(PosVec) == 0)
 						{
 							if (Ball->m_nCollisionType != GP_CTYPE_STATIC)
 								Ball->MoveBy(rand() % 3 - 1, rand() % 3 - 1);
+							if (Target->m_nCollisionType != GP_CTYPE_STATIC)
+								Target->MoveBy(rand() % 3 - 1, rand() % 3 - 1);
 						}
 						else
 						{
 							if (Ball->m_nCollisionType != GP_CTYPE_STATIC)
-								Ball->MoveBy(-Normal.x*overlapped/CKgVector2D::abs(Normal), -Normal.y*overlapped/CKgVector2D::abs(Normal));
+							{
+								if (Target->m_nCollisionType == GP_CTYPE_STATIC)
+									Ball->MoveBy(-PosVec.x * Overlapped / CKgVector2D::abs(PosVec), -PosVec.y * Overlapped / CKgVector2D::abs(PosVec) * 0.5);
+								else
+									Ball->MoveBy(-PosVec.x * Overlapped / CKgVector2D::abs(PosVec) * 0.5, -PosVec.y * Overlapped / CKgVector2D::abs(PosVec) * 0.5);
+							}
+							if (Target->m_nCollisionType != GP_CTYPE_STATIC)
+							{
+								if (Ball->m_nCollisionType == GP_CTYPE_STATIC)
+									Target->MoveBy(PosVec.x * Overlapped / CKgVector2D::abs(PosVec), PosVec.y * Overlapped / CKgVector2D::abs(PosVec) * 0.5);
+								else
+									Target->MoveBy(PosVec.x * Overlapped / CKgVector2D::abs(PosVec) * 0.5, PosVec.y * Overlapped / CKgVector2D::abs(PosVec) * 0.5);
+							}
+							if (Target->m_nType == GP_STYPE_LINE)
+							{
+								CKgVector2D LinePos = CKgVector2D(Target->m_lnLine.End.X, Target->m_lnLine.End.Y)
+									- CKgVector2D(Target->m_lnLine.Start.X, Target->m_lnLine.Start.Y);
+								CKgVector2D LineCirclePos = Ball->m_Center - CKgVector2D(Target->m_lnLine.Start.X, Target->m_lnLine.Start.Y);
+
+
+								double AA = LinePos.Dot(LinePos);
+								double ProjectionRate = max(0., min(AA, LinePos.Dot(LineCirclePos)))/AA;
+
+								CKgVector2D ProjectionPoint = CKgVector2D(Target->m_lnLine.Start) + ProjectionRate * LinePos;
+								CKgVector2D Normal = Ball->m_Center - ProjectionPoint;
+
+								double overlapped = CKgVector2D::abs(Normal) - Ball->m_Radius - Target->m_nWidth/2;
+								if (overlapped <= 0)
+								{
+									CKhuGleSprite* VirtualBall = new CKhuGleSprite(GP_STYPE_ELLIPSE, GP_CTYPE_STATIC,
+										CKgLine((int)(ProjectionPoint.x - Target->m_nWidth / 2.)), (int)(ProjectionPoint.y - Target->m_nWidth / 2.)),
+										(int)(ProjectionPoint.x + Target->m_nWidth / 2.), (int)(ProjectionPoint.y + Target->m_nWidth / 2.),
+										KG_COLOR_24_RGB(255, 0, 0), false, 100);
+
+										VirtualBall->m_Mass = 1E50;
+										VirtualBalls.push_back(VirtualBall);
+
+										CollisionPairs.push_back({ Ball, VirtualBall });
+										if (CKgVector2D::abs(Normal) == 0)
+										{
+											if (Ball->m_nCollisionType != GP_CTYPE_STATIC)
+												Ball->MoveBy(rand() % 3 - 1, rand() % 3 - 1);
+										}
+										else
+										{
+											if (Ball->m_nCollisionType != GP_CTYPE_STATIC)
+												Ball->MoveBy(-Normal.x * overlapped / CKgVector2D::abs(Normal), -Normal.y * overlapped / CKgVector2D::abs(Normal));
+										}
+								}
+								Ball->m_bCollided = true;
+								Target->m_bCollided = true;
+							}
 						}
-						Ball->m_bCollided = true;
-						Target->m_bCollided = true;
 					}
 				}
 			}
