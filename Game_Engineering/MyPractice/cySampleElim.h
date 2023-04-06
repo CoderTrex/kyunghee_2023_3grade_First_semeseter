@@ -74,20 +74,21 @@
 namespace cy {
 //-------------------------------------------------------------------------------
 
-//! An implementation of the weighted sample elimination method.
+//! 가중치 샘플 제거 방법의 구현
 //!
-//! Cem Yuksel. 2015. Sample Elimination for Generating Poisson Disk Sample Sets. 
-//! Computer Graphics Forum 34, 2 (May 2015), 25-32. 
+//! Cem Yuksel. 2015. Sample Elimination for Generating Poisson Disk Sample Sets.
+//! Computer Graphics Forum 34, 2 (May 2015), 25-32.
 //! http://www.cemyuksel.com/research/sampleelimination/
 //!
-//! This class keeps a number of parameters for the weighted sample elimination algorithm.
-//! The main algorithm is implemented in the Eliminate method.
+//! 이 클래스는 가중치 샘플 제거 알고리즘에 대한 여러 매개 변수를 유지합니다.
+//! Eliminate 메서드에서 주요 알고리즘이 구현되어 있습니다.
+
 
 template <typename PointType, typename FType, int DIMENSIONS, typename SIZE_TYPE=size_t>
 class WeightedSampleElimination
 {
 public:
-	//! The constructor sets the default parameters.
+	//! 생성자는 기본 매개 변수를 설정합니다.
 	WeightedSampleElimination()
 	{
 		for ( int d=0; d<DIMENSIONS; d++ ) {
@@ -100,94 +101,92 @@ public:
 		tiling = false;
 		weightLimiting = true;
 	}
-
-	//! Tiling determines whether the generated samples are tile-able. 
-	//! Tiling is off by default, but it is a good idea to turn it on for box-shaped sampling domains.
-	//! Note that when tiling is off, weighted sample elimination is less likely to eliminate samples
-	//! near the boundaries of the sampling domain. If you turn on tiling, make sure to set the
-	//! correct boundaries for the sampling domain.
+	//! Tiling은 생성된 샘플이 타일링 가능한지 여부를 결정합니다.
+	//! 기본적으로 Tiling은 꺼져 있지만 상자 모양의 샘플링 도메인의 경우 켜는 것이 좋습니다.
+	//! Tiling이 꺼져 있으면, 가중치 샘플 제거는 샘플 도메인 경계 근처의 샘플을 제거하지 않을 가능성이 더 큽니다.
+	//! Tiling을 켜면, 정확한 샘플 도메인 경계를 설정해야 합니다.
 	void SetTiling( bool on=true ) { tiling = on; }
 
-	//! Returns true if the tiling parameter is turned on.
+	//! Tiling 매개 변수가 켜져 있는지 여부를 반환합니다.
 	bool IsTiling() const { return tiling; }
 
-	//! Weight limiting is used by the default weight function and it is on by default.
-	//! Using weight limiting typically leads to more pronounced blue noise characteristics;
-	//! therefore, it is recommended. The beta parameter determines the amount of weight limiting.
-	//! Setting the beta parameter to zero effectively turns off weight limiting.
+	//! Weight limiting은 기본 가중치 함수에서 사용되며 기본적으로 켜져 있습니다.
+	//! 가중치 제한을 사용하면 일반적으로 더 강한 블루 노이즈 특성을 가집니다.
+	//! 따라서 권장됩니다. 베타 매개 변수는 가중치 제한의 양을 결정합니다.
+	//! 베타 매개 변수를 0으로 설정하면 가중치 제한이 꺼집니다.
 	void SetWeightLimiting( bool on=true ) { weightLimiting = on; }
 
-	//! Returns true if weight limiting is turned on.
+	//! Weight limiting이 켜져 있는지 여부를 반환합니다.
 	bool IsWeightLimiting() const { return weightLimiting; }
 
-	//! Returns the minimum bounds of the sampling domain.
-	//! The sampling domain boundaries are used for tiling and computing the maximum possible
-	//! Poisson disk radius for the sampling domain. The default boundaries are between 0 and 1.
+	//! 샘플링 도메인의 최소 경계를 반환합니다.
+	//! 샘플링 도메인 경계는 타일링 및 샘플링 도메인의 최대 가능한
+	//! 포아송 디스크 반지름을 계산하는 데 사용됩니다. 기본 경계는 0과 1 사이입니다.
 	PointType const & GetBoundsMin() const { return boundsMin; }
 
-	//! Returns the maximum bounds of the sampling domain.
-	//! The sampling domain boundaries are used for tiling and computing the maximum possible
-	//! Poisson disk radius for the sampling domain. The default boundaries are between 0 and 1.
+	//! 샘플링 도메인의 최대 경계를 반환합니다.
+	//! 샘플링 도메인 경계는 타일링 및 샘플링 도메인의 최대 가능한
+	//! 포아송 디스크 반지름을 계산하는 데 사용됩니다. 기본 경계는 0과 1 사이입니다.
 	PointType const & GetBoundsMax() const { return boundsMax; }
 
-	//! Sets the minimum bounds of the sampling domain.
-	//! The sampling domain boundaries are used for tiling and computing the maximum possible
-	//! Poisson disk radius for the sampling domain. The default boundaries are between 0 and 1.
+	//! 샘플링 도메인의 최소 경계를 설정합니다.
+	//! 샘플링 도메인 경계는 타일링 및 샘플링 도메인의 최대 가능한
+	//! 포아송 디스크 반지름을 계산하는 데 사용됩니다. 기본 경계는 0과 1 사이입니다.
 	void SetBoundsMin( PointType const &bmin ) { boundsMin = bmin; }
 
-	//! Sets the maximum bounds of the sampling domain.
-	//! The sampling domain boundaries are used for tiling and computing the maximum possible
-	//! Poisson disk radius for the sampling domain. The default boundaries are between 0 and 1.
+	//! 샘플링 도메인의 최대 경계를 설정합니다.
+	//! 샘플링 도메인 경계는 타일링 및 샘플링 도메인의 최대 가능한
+	//! 포아송 디스크 반지름을 계산하는 데 사용됩니다. 기본 경계는 0과 1 사이입니다.
 	void SetBoundsMax( PointType const &bmax ) { boundsMax = bmax; }
 
-	//! Sets the alpha parameter that is used by the default weight function. 
+	//! 기본 가중치 함수에서 사용되는 알파 매개 변수를 설정합니다. 
 	void  SetParamAlpha( FType a ) { alpha = a; }
 
-	//! Returns the alpha parameter that is used by the default weight function. 
+	//! 기본 가중치 함수에 사용되는 알파 매개변수를 반환합니다.
 	FType GetParamAlpha() const { return alpha; }
 
-	//! Sets the beta parameter that is used by weight limiting for the default weight function.
-	//! Setting the beta parameter to zero effectively turns off weight limiting.
-	//! If weight limiting is off, this parameter has no effect.
-	void  SetParamBeta ( FType b ) { beta  = b; }
+	//! 기본 가중치 함수의 가중치 제한에 사용되는 베타 매개변수를 설정합니다.
+	//! 베타 매개변수를 0으로 설정하면 가중치 제한이 꺼집니다.
+	//! 가중치 제한이 꺼져 있으면 이 매개변수는 아무런 효과가 없습니다.
+	void SetParamBeta ( FType b ) { beta = b; }
 
-	//! Returns the beta parameter that is used by weight limiting for the default weight function.
-	FType GetParamBeta () const { return beta;  }
+	//! 기본 가중치 함수의 가중치 제한에 사용되는 베타 매개변수를 반환합니다.
+	FType GetParamBeta () const { return beta; }
 
-	//! Sets the gamma parameter that is used by weight limiting for the default weight function. 
-	//! The gamma parameter adjusts weight limiting based on the ratio of the input and output counts.
-	//! If weight limiting is off, this parameter has no effect.
-	void  SetParamGamma( FType c ) { gamma = c; }
+	//! 기본 가중치 함수의 가중치 제한에 사용되는 감마 매개변수를 설정합니다.
+	//! 감마 매개변수는 입력 및 출력 개수의 비율을 기반으로 가중치 제한을 조정합니다.
+	//! 가중치 제한이 꺼져 있으면 이 매개변수는 아무런 효과가 없습니다.
+	void SetParamGamma( FType c ) { gamma = c; }
 
-	//! Returns the gamma parameter that is used by weight limiting for the default weight function. 
+	//! 기본 가중치 함수의 가중치 제한에 사용되는 감마 매개변수를 반환합니다.
 	FType GetParamGamma() const { return gamma; }
 
 
-	//! This is the main method that uses weighted sample elimination for selecting a subset of samples
-	//! with blue noise (Poisson disk) characteristics from a given input sample set (inputPoints). 
-	//! The selected samples are copied to outputPoints. The output size must be smaller than the input size.
+	//! 이것은 샘플의 하위 집합을 선택하기 위해 가중 샘플 제거를 사용하는 주요 방법입니다.
+	//주어진 입력 샘플 세트(입력 포인트)에서 블루 노이즈(푸아송 디스크) 특성을 가진 샘플 하위 집합을 선택하는 방법입니다. 
+	//! 선택된 샘플이 출력 포인트에 복사됩니다. 출력 크기는 입력 크기보다 작아야 합니다.
 	//! 
-	//! If the progressive parameter is true, the output sample points are ordered for progressive sampling,
-	//! such that when the samples are introduced one by one in this order, each subset in the sequence
-	//! exhibits blue noise characteristics.
+	//! 프로그레시브 파라미터가 참이면 출력 샘플 포인트는 프로그레시브 샘플링을 위해 정렬됩니다,
+	// 샘플이 이 순서대로 하나씩 도입될 때 시퀀스의 각 부분 집합은 //!
+	//! 블루 노이즈 특성을 나타냅니다.
 	//! 
-	//! The d_max parameter defines radius within which the weight function is non-zero.
+	//! d_max 매개변수는 가중 함수가 0이 아닌 반경을 정의합니다.
 	//! 
-	//! The dimensions parameter specifies the dimensionality of the sampling domain. This parameter
-	//! would typically be equal to the dimensionality of the sampling domain (specified by DIMENSIONS).
-	//! However, smaller values can be used when sampling a low-dimensional manifold in a high-dimensional
-	//! space, such as a surface in 3D.
+	//! dimensions 매개변수는 샘플링 도메인의 차원을 지정합니다. 이 매개변수
+	//는 일반적으로 샘플링 도메인의 차원(DIMENSIONS로 지정됨)과 동일합니다.
+	//! 그러나 고차원 공간에서 저차원 다양체를 샘플링할 때는 더 작은 값을 사용할 수 있습니다.
+	//공간에서 저차원 다양체를 샘플링할 때는 더 작은 값을 사용할 수 있습니다.
 	//! 
-	//! The weight function is the crucial component of weighted sample elimination. It computes the weight
-	//! of a sample point based on the placement of its neighbors within d_max radius. The weight function
-	//! must have the following form:
+	//! 가중치 함수는 가중치 샘플 제거의 중요한 구성 요소입니다. 이 함수는 샘플 포인트의 가중치를 계산합니다.
+	//! 샘플 포인트의 최대 반경 내에 있는 이웃의 배치에 따라 가중치를 계산합니다. 가중치 함수
+	//는 다음과 같은 형식을 가져야 합니다:
 	//!
 	//! FType weightFunction( PointType const &p0, PointType const &p1, FType dist2, FType d_max )
 	//!
-	//! The arguments p0 and p1 are the two neighboring points, dist2 is the square of the Euclidean distance 
-	//! between these two points, and d_max is the current radius for the weight function.
-	//! Note that if the progressive parameter is on, the d_max value sent to the weight function can be
-	//! different than the d_max value passed to this method.
+	//! 인자 p0 과 p1 은 인접한 두 점이고, dist2 는 이 두 점 사이의 유클리드 거리의 제곱입니다. 
+	//! 제곱이며, d_max는 가중치 함수의 현재 반경입니다.
+	//! 프로그레시브 매개변수가 켜져 있으면 가중치 함수에 전송되는 d_max 값이
+	//이 메서드에 전달된 d_max 값과 다를 수 있습니다.
 	template <typename WeightFunction>
 	void Eliminate ( 
 		PointType const *inputPoints, 
@@ -222,23 +221,23 @@ public:
 		}
 	}
 
-	//! This is the main method that uses weighted sample elimination for selecting a subset of samples
-	//! with blue noise (Poisson disk) characteristics from a given input sample set (inputPoints). 
-	//! The selected samples are copied to outputPoints. The output size must be smaller than the input size.
-	//! This method uses the default weight function.
+	//! 이것은 샘플의 하위 집합을 선택하기 위해 가중 샘플 제거를 사용하는 주요 방법입니다.
+	//주어진 입력 샘플 세트(입력 포인트)에서 블루 노이즈(푸아송 디스크) 특성을 가진 샘플 하위 집합을 선택하는 방법입니다. 
+	//! 선택된 샘플이 출력 포인트에 복사됩니다. 출력 크기는 입력 크기보다 작아야 합니다.
+	//! 이 메서드는 기본 가중치 함수를 사용합니다.
 	//! 
-	//! If the progressive parameter is true, the output sample points are ordered for progressive sampling,
-	//! such that when the samples are introduced one by one in this order, each subset in the sequence
-	//! exhibits blue noise characteristics.
+	//! 프로그레시브 매개변수가 참이면 출력 샘플 포인트는 프로그레시브 샘플링을 위해 정렬됩니다,
+	//샘플이 이 순서대로 하나씩 도입될 때 시퀀스의 각 하위 집합은
+	//! 블루 노이즈 특성을 나타냅니다.
 	//! 
-	//! The d_max parameter defines radius within which the weight function is non-zero. If this parameter
-	//! is zero (or negative), it is automatically computed using the sampling dimensions and the size of
-	//! the output set.
+	//! d_max 매개변수는 가중 함수가 0이 아닌 반경을 정의합니다. 이 매개변수
+	//! 가 0(또는 음수)이면 샘플링 치수와 출력 세트의 크기인
+	//! 출력 세트의 크기를 사용하여 자동으로 계산됩니다.
 	//! 
-	//! The dimensions parameter specifies the dimensionality of the sampling domain. This parameter
-	//! would typically be equal to the dimensionality of the sampling domain (specified by DIMENSIONS).
-	//! However, smaller values can be used when sampling a low-dimensional manifold in a high-dimensional
-	//! space, such as a surface in 3D.
+	//! dimensions 매개변수는 샘플링 도메인의 차원을 지정합니다. 이 매개변수
+	//! 는 일반적으로 샘플링 도메인의 차원(DIMENSIONS로 지정됨)과 동일합니다.
+	//! 그러나 고차원 공간에서 저차원 다양체를 샘플링할 때는 더 작은 값을 사용할 수 있습니다.
+	//공간에서 저차원 다양체를 샘플링할 때는 이보다 작은 값을 사용할 수 있습니다.
 	void Eliminate ( 
 		PointType const *inputPoints, 
 		SIZE_TYPE        inputSize, 
@@ -272,10 +271,10 @@ public:
 		}
 	}
 
-	//! Returns the maximum possible Poisson disk radius in the given dimensions for the given sampleCount
-	//! to spread over the given domainSize. If the domainSize argument is zero or negative, it is computed
-	//! as the area or N-dimensional volume of the box defined by the minimum and maximum bounds.
-	//! This method is used for the default weight function.
+	//! 주어진 샘플 수에 대해 주어진 치수에서 가능한 최대 푸아송 디스크 반경을 반환합니다.
+	//에 대해 주어진 도메인 사이즈에 퍼질 수 있는 최대 푸아송 디스크 반경을 반환합니다. domainSize 인자가 0이거나 음수이면, 이 값은 //!
+	//최소 및 최대 경계로 정의된 상자의 면적 또는 N차원 부피로 계산됩니다.
+	//! 이 메서드는 기본 가중치 함수에 사용됩니다.
 	FType GetMaxPoissonDiskRadius( int dimensions, SIZE_TYPE sampleCount, FType domainSize = 0 ) const
 	{
 		assert( dimensions >= 2 );
