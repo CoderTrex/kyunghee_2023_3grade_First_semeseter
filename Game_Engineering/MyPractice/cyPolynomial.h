@@ -332,6 +332,7 @@ public:
 
 	CY_NODISCARD bool IsFinite() const { for ( int i=0; i<=N; ++i ) if ( ! cy::IsFinite(coef[i]) ) return false; return true; }	//!< Returns true if all coefficients are finite real numbers.
 
+	void show() {for (int i = 0; i <)};
 protected:
 	static constexpr ftype DefaultError() { return PolynomialDefaultError<ftype>(); }	//!< Returns the default error threshold for numerical root finding.
 };
