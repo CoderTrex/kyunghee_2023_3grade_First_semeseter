@@ -3,13 +3,13 @@
   <ProjectOutputs />
   <ContentFiles>
     <ContentFile>
-      <FullPath>C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\shader.cso</FullPath>
+      <FullPath>C:\Coding\kyunghee_2023_3grade_First_semester\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\shader.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\PS.cso</FullPath>
+      <FullPath>C:\Coding\kyunghee_2023_3grade_First_semester\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\PS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\VS.cso</FullPath>
+      <FullPath>C:\Coding\kyunghee_2023_3grade_First_semester\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\VS.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

@@ -21,17 +21,17 @@ ID3D11Buffer* g_pVertexBuffer = nullptr;
 ID3D11Buffer* g_pIndexBuffer = nullptr;
 ID3D11InputLayout* g_pVertexLayout = nullptr;
 
-ID3D11Buffer* g_pConstantBuffer = nullptr;
+//ID3D11Buffer* g_pConstantBuffer = nullptr; 이제 사용하지 않음
 XMMATRIX g_worldMatrix1;
 XMMATRIX g_viewMatrix1;
 XMMATRIX g_projectionMatrix1;
 
-XMMATRIX g_worldMatrix2;
-XMMATRIX g_viewMatrix2;
-XMMATRIX g_projectionMatrix2;
-
 ID3D11Texture2D* g_pDepthStencil = nullptr;
 ID3D11DepthStencilView* g_pDepthStencilView = nullptr;
+
+XMVECTOR at;
+XMVECTOR eye;
+XMVECTOR up;
 
 ID3D11ShaderResourceView* g_pTextureRV = nullptr;
 ID3D11SamplerState* g_pSamplerLinear = nullptr;
@@ -423,14 +423,19 @@ HRESULT InitDevice()
 	WORD sIndices[] = {
 		3,1,0,
 		2,1,3,
+
 		6,4,5,
 		7,4,6,
+		
 		11,9,8,
 		10,9,11,
+		
 		14,12,13,
 		15,12,14,
+		
 		19,17,16,
 		18,17,19,
+		
 		22,20,21,
 		23,20,22
 	};
@@ -459,23 +464,28 @@ HRESULT InitDevice()
 	bd.Usage = D3D11_USAGE_DEFAULT;
 	bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	bd.CPUAccessFlags = 0;
-	hr = g_pd3dDevice-> CreateBuffer(&bd, nullptr, &g_pConstantBuffer);
+
+
+	hr = g_pd3dDevice-> CreateBuffer(&bd, nullptr, &g_pCBView);
 	if(FAILED(hr))
 		return hr;
 
+	hr = g_pd3dDevice->CreateBuffer(&bd, nullptr, &g_pCBWorld);
+	if (FAILED(hr))
+		return hr;
+
+	hr = g_pd3dDevice->CreateBuffer(&bd, nullptr, &g_pCBProjection);
+	if (FAILED(hr))
+		return hr;
+
 	g_worldMatrix1 = XMMatrixIdentity();
-	XMVECTOR eye1 = XMVectorSet(0.0f, 1.0f,-3.0f, 0.0f);
+
+	XMVECTOR eye1 = XMVectorSet(0.0f, 3.0f,-5.0f, 0.0f);
 	XMVECTOR at1 = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 	XMVECTOR up1 = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+
 	g_viewMatrix1 = XMMatrixLookAtLH(eye1, at1, up1);
 	g_projectionMatrix1 = XMMatrixPerspectiveFovLH (XM_PIDIV2, width / (FLOAT)height, 0.01f, 100.0f);
-
-	g_worldMatrix2 = XMMatrixIdentity();
-	XMVECTOR eye2 = XMVectorSet(0.0f, 1.0f, -3.0f, 0.0f);
-	XMVECTOR at2 = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
-	XMVECTOR up2 = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
-	g_viewMatrix2 = XMMatrixLookAtLH(eye2, at2, up2);
-	g_projectionMatrix2 = XMMatrixPerspectiveFovLH(	XM_PIDIV2, width /(FLOAT)height, 0.01f, 100.0f);
 
 	//10. Depth Buffer
 	D3D11_TEXTURE2D_DESC descDepth = {};
@@ -503,10 +513,8 @@ HRESULT InitDevice()
 	if (FAILED(hr))
 		return hr;
 	g_pImmediateContext->OMSetRenderTargets(1, &g_pRenderTargetView, g_pDepthStencilView);
-	if (FAILED(hr))
-		return hr;
 	g_pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-	return S_OK;
+
 
 	hr = CreateDDSTextureFromFile(g_pd3dDevice, L"../Library/Game/seafloor.dds", nullptr, &g_pTextureRV);
 	if (FAILED(hr))
@@ -539,7 +547,7 @@ void CleanupDevice()
 	if (g_pVertexLayout) g_pVertexLayout->Release();
 	if (g_pVertexShader) g_pVertexShader->Release();
 	if (g_pPixelShader) g_pPixelShader->Release();
-	if (g_pConstantBuffer) g_pConstantBuffer->Release();
+	//if (g_pConstantBuffer) g_pConstantBuffer->Release();
 	if (g_pDepthStencil) g_pDepthStencil->Release();
 	if (g_pDepthStencilView) g_pDepthStencilView->Release();
 	if (g_pTextureRV) g_pTextureRV->Release();
@@ -596,47 +604,29 @@ void Render()
 			timeStart = timeCur;
 		t = (timeCur - timeStart) / 1000.0f;
 	}
+
+	g_worldMatrix1 = XMMatrixRotationY(t * 5);
 	g_pImmediateContext->ClearRenderTargetView(g_pRenderTargetView, Colors::MidnightBlue);
 	g_pImmediateContext->ClearDepthStencilView(g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
+	XMMATRIX w = XMMatrixTranspose(g_worldMatrix1);
+	XMMATRIX v = XMMatrixTranspose(g_viewMatrix1);
+	XMMATRIX p = XMMatrixTranspose(g_projectionMatrix1);
+
 	g_pImmediateContext->VSSetShader(g_pVertexShader, nullptr, 0);
-	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pConstantBuffer);
 	g_pImmediateContext->PSSetShader(g_pPixelShader, nullptr, 0);
 
+	g_pImmediateContext->UpdateSubresource(g_pCBWorld, 0, nullptr, &w, 0, 0);
+	g_pImmediateContext->UpdateSubresource(g_pCBView, 0, nullptr, &v, 0, 0);
+	g_pImmediateContext->UpdateSubresource(g_pCBProjection, 0, nullptr, &p, 0, 0);
 
-	//ConstantBuffer cb1;
-	//g_worldMatrix1 *= XMMatrixTranslation(0, 0, 5);
-
-	//g_worldMatrix1 = XMMatrixRotationY(t * 2);
-	//g_worldMatrix1 *= XMMatrixTranslation(0, 0, 5);
-	//cb1.World = XMMatrixTranspose(g_worldMatrix1);
-	//cb1.View = XMMatrixTranspose(g_viewMatrix1);
-	//cb1.Projection = XMMatrixTranspose(g_projectionMatrix1);
-	//g_pImmediateContext->UpdateSubresource(g_pConstantBuffer, 0, nullptr, &cb1, 0, 0);
-	//g_pImmediateContext->DrawIndexed(36, 0, 0);
-	
-	ConstantBuffer cb1;
-
-	cbWorld cb_world;
-	cbView cb_view;
-	cbProjection cb_projection;
-
-	cb_world.World = XMMatrixTranspose(g_worldMatrix1);
-	cb_view.View = XMMatrixTranspose(g_viewMatrix1);
-	cb_projection.Projection = XMMatrixTranspose(g_projectionMatrix1);
-
-	cb1.A = cb_world.World;
-	cb1.B = cb_view.View;
-	cb1.C = cb_projection.Projection;
-
-	g_pImmediateContext->UpdateSubresource(g_pConstantBuffer, 0, nullptr, &cb1, 0, 0);
-
-	g_pImmediateContext->DrawIndexed(36, 0, 0);
-	g_pSwapChain->Present(0, 0);
-
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
-	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBView);
 	g_pImmediateContext->VSSetConstantBuffers(1, 1, &g_pCBProjection);
 	g_pImmediateContext->VSSetConstantBuffers(2, 1, &g_pCBWorld);
+
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
+	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
+
+	g_pImmediateContext->DrawIndexed(36, 0, 0);
+	g_pSwapChain->Present(0, 0);
 }
