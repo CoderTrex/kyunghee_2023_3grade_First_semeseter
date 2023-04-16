@@ -548,81 +548,81 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\DirectXMath.h(22,
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\DirectXMath.h(22,142): warning C4668: '_M_CEE'은(는) 전처리기 매크로로 정의되어 있지 않으므로 '#if/#elif'에 해당하는 '0'으로 바뀝니다.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\DirectXMath.h(281,100): warning C4668: '__arm__'은(는) 전처리기 매크로로 정의되어 있지 않으므로 '#if/#elif'에 해당하는 '0'으로 바뀝니다.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\DirectXMath.h(281,111): warning C4668: '__aarch64__'은(는) 전처리기 매크로로 정의되어 있지 않으므로 '#if/#elif'에 해당하는 '0'으로 바뀝니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(139,33): warning C4365: '초기화 중': 'LONG'에서 'UINT'(으)로의 변환입니다. signed 또는 unsigned가 일치하지 않습니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(140,34): warning C4365: '초기화 중': 'LONG'에서 'UINT'(으)로의 변환입니다. signed 또는 unsigned가 일치하지 않습니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(407,33): warning C4459: 'g_pIndexBuffer' 선언은 전역 선언을 숨깁니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(21,15): message : 'g_pIndexBuffer' 선언을 참조하십시오.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(471,61): warning C5219: 'UINT'에서 'FLOAT'(으)로 암시적 변환이 수행되면 데이터가 손실될 수 있습니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(478,61): warning C5219: 'UINT'에서 'FLOAT'(으)로 암시적 변환이 수행되면 데이터가 손실될 수 있습니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(597,16): warning C5219: 'ULONGLONG'에서 'float'(으)로 암시적 변환이 수행되면 데이터가 손실될 수 있습니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(80): warning C4715: 'WindowProc': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(511): warning C4702: 접근할 수 없는 코드입니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(513): warning C4702: 접근할 수 없는 코드입니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(515): warning C4702: 접근할 수 없는 코드입니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(525): warning C4702: 접근할 수 없는 코드입니다.
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(525): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(524) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(525) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(513): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(512) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(513) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(507): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(506) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(507) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(504): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(503) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(504) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(495): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(494) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(495) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(464): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(463) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(464) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(453): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(452) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(453) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(398): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(395) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(398) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(331): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(328) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(331) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(316): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(313) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(316) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(303): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(300) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(303) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(275): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(272) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(275) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(267): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(264) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(267) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(248): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(247) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(248) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(244): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(243) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(244) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(239): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(238) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(239) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(194): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(193) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(194) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(579): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(573) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(579) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(177): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(176) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(177) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(169): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(162) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'driverTypeIndex' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(169) : 참고: 이 줄에서 호출 피드
-C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(165): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(162) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'driverTypeIndex' 범위
-  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\source\Library\Game\Game.cpp(165) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(139,33): warning C4365: '초기화 중': 'LONG'에서 'UINT'(으)로의 변환입니다. signed 또는 unsigned가 일치하지 않습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(140,34): warning C4365: '초기화 중': 'LONG'에서 'UINT'(으)로의 변환입니다. signed 또는 unsigned가 일치하지 않습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(407,33): warning C4459: 'g_pIndexBuffer' 선언은 전역 선언을 숨깁니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(21,15): message : 'g_pIndexBuffer' 선언을 참조하십시오.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(471,61): warning C5219: 'UINT'에서 'FLOAT'(으)로 암시적 변환이 수행되면 데이터가 손실될 수 있습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(478,61): warning C5219: 'UINT'에서 'FLOAT'(으)로 암시적 변환이 수행되면 데이터가 손실될 수 있습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(597,16): warning C5219: 'ULONGLONG'에서 'float'(으)로 암시적 변환이 수행되면 데이터가 손실될 수 있습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(80): warning C4715: 'WindowProc': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(511): warning C4702: 접근할 수 없는 코드입니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(513): warning C4702: 접근할 수 없는 코드입니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(515): warning C4702: 접근할 수 없는 코드입니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(525): warning C4702: 접근할 수 없는 코드입니다.
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(525): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(524) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(525) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(513): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(512) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(513) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(507): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(506) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(507) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(504): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(503) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(504) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(495): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(494) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(495) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(464): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(463) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(464) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(453): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(452) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(453) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(398): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(395) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(398) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(331): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(328) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(331) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(316): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(313) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(316) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(303): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(300) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(303) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(275): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(272) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(275) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(267): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(264) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(267) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(248): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(247) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(248) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(244): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(243) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(244) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(579): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(573) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(579) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(239): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(238) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(239) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(194): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(193) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(194) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(177): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(176) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'hr' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(177) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(169): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(162) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'driverTypeIndex' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(169) : 참고: 이 줄에서 호출 피드
+C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(165): warning C5045: 컴파일러는 /Qspectre 스위치가 지정된 경우 메모리 로드를 위해 스펙터 완화를 삽입합니다.
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(162) : 참고: 이 줄에서 비교에 의해 검사된 인덱스 'driverTypeIndex' 범위
+  C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Source\Library\Game\Game.cpp(165) : 참고: 이 줄에서 호출 피드
   Library.vcxproj -> C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\Libraryd.lib
   하위 디렉터리 또는 파일 C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Build\..\Library\x64\Debug이(가) 이미 있습니다.
   C:\Coding\kyunghee-2023_3grade_First_semeseter\Game_Graphics_Programming\GCP_Texture\Build\x64\Debug\Game.exe
