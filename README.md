@@ -56,14 +56,3 @@ PROJECT_COMPLETION_STATUS : TRUE
 PROJECT_MULTI : TRUE
 PROJECT_SUBPROJECT : 3D_Data_Processing, 3D_Graphics_Programming, AI_and_Game_Programming, Game_Engineering, Game_Graphics_Programming, OpenSource_SW_Development_Methods_and_Tools, Operating_System
 PROJECT_CATEGORY : 'NONE'
-
-
-## Project Crawling
-
-PROJECT_NAME :
-PROJECT_DESCRIPTION :
-PROJECT_URL :
-PROJECT_COMPLETION_STATUS :
-PROJECT_MULTI :
-PROJECT_SUBPROJECT :
-PROJECT_CATEGORY :
