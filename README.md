@@ -54,5 +54,5 @@ PROJECT_DESCRIPTION : This repository contains course materials and assignments 
 PROJECT_URL : 'https://github.com/Tyranno-Rex/Kyunghee_2023_3Grade_First_Semester.git'
 PROJECT_COMPLETION_STATUS : TRUE
 PROJECT_MULTI : TRUE
-PROJECT_SUBPROJECT : 3D_Data_Processing, 3D_Graphics_Programming, AI_and_Game_Programming, Game_Engineering, Game_Graphics_Programming, OpenSource_SW_Development_Methods_and_Tools, Operating_System
+PROJECT_SUBPROJECT : 3D_Data_Processing, AI_and_Game_Programming, Game_Engineering, Game_Graphics_Programming, OpenSource_SW_Development_Methods_and_Tools, Operating_System
 PROJECT_CATEGORY : 'NONE'
